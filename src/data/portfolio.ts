@@ -42,7 +42,7 @@ export const profileInfo: ProfileInfo = {
   role: "Design Engineer",
   location: "India",
   bannerUrl: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=1200&auto=format&fit=crop",
-  avatarUrl: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=300&auto=format&fit=crop",
+  avatarUrl: "/avatar.jpg",
   bioBullets: [
     {
       text: "I'm a Design Engineer passionate about crafting digital products where thoughtful design meets clean, scalable code.",

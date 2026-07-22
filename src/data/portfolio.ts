@@ -39,13 +39,13 @@ export interface SocialItem {
 
 export const profileInfo: ProfileInfo = {
   name: "Rohit",
-  role: "UI/UX and Frontend Specialist",
+  role: "Design Engineer",
   location: "India",
   bannerUrl: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=1200&auto=format&fit=crop",
   avatarUrl: "/avatar.jpg",
   bioBullets: [
     {
-      text: "I'm a UI/UX and Frontend Specialist passionate about crafting digital products where thoughtful design meets clean, scalable code.",
+      text: "I'm a Design Engineer passionate about crafting digital products where thoughtful design meets clean, scalable code.",
     },
     {
       text: "I design and develop modern interfaces with React, Tailwind, and Framer Motion focusing on usability, performance, and delightful interactions.",

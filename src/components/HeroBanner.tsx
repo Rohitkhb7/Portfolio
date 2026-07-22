@@ -18,10 +18,10 @@ export default function HeroBanner() {
     localStorage.setItem("portfolio_views", initialCount.toString());
     setViewCount(initialCount);
 
-    // Loop through roles every 2.2 seconds
+    // Loop through roles every 3 seconds
     const interval = setInterval(() => {
       setRoleIndex((prev) => (prev + 1) % roles.length);
-    }, 2200);
+    }, 3000);
 
     return () => clearInterval(interval);
   }, [roles.length]);

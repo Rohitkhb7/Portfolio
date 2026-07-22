@@ -3,18 +3,28 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import { Eye } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
 import { profileInfo } from "@/data/portfolio";
 
 export default function HeroBanner() {
   const [viewCount, setViewCount] = useState(1);
-  const roleText = profileInfo.role;
+  const [roleIndex, setRoleIndex] = useState(0);
+
+  const roles = ["Design Engineer", "UI/UX Designer", "Frontend Developer"];
 
   useEffect(() => {
     const savedViews = localStorage.getItem("portfolio_views");
     const initialCount = savedViews ? parseInt(savedViews, 10) + 1 : 124;
     localStorage.setItem("portfolio_views", initialCount.toString());
     setViewCount(initialCount);
-  }, []);
+
+    // Loop through roles every 2.2 seconds
+    const interval = setInterval(() => {
+      setRoleIndex((prev) => (prev + 1) % roles.length);
+    }, 2200);
+
+    return () => clearInterval(interval);
+  }, [roles.length]);
 
   return (
     <section id="home" className="w-full flex flex-col gap-2 pt-14 z-10">
@@ -53,22 +63,33 @@ export default function HeroBanner() {
               {profileInfo.name}
             </h1>
 
-            {/* Character Reveal Animated Role */}
-            <div className="mt-1 flex gap-0.5 overflow-hidden text-xs sm:text-lg font-semibold text-[var(--text-secondary)]">
-              {roleText.split("").map((char, index) => (
-                <span
-                  key={index}
-                  className="inline-block animate-char-reveal"
-                  style={{ animationDelay: `${index * 0.04}s` }}
+            {/* Continuous Looping Role Switcher */}
+            <div className="h-6 sm:h-7 overflow-hidden mt-1 relative flex items-center">
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={roles[roleIndex]}
+                  initial={{ opacity: 0, y: 12 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -12 }}
+                  transition={{ duration: 0.3, ease: "easeInOut" }}
+                  className="flex gap-0.5 text-xs sm:text-lg font-semibold text-[var(--text-secondary)]"
                 >
-                  {char === " " ? "\u00A0" : char}
-                </span>
-              ))}
+                  {roles[roleIndex].split("").map((char, index) => (
+                    <span
+                      key={index}
+                      className="inline-block animate-char-reveal"
+                      style={{ animationDelay: `${index * 0.025}s` }}
+                    >
+                      {char === " " ? "\u00A0" : char}
+                    </span>
+                  ))}
+                </motion.div>
+              </AnimatePresence>
             </div>
 
             {/* Location & Tag */}
             <p className="text-[10px] sm:text-xs text-[var(--text-muted)] font-semibold mt-1 truncate max-w-full">
-              UI/UX Specialist • {profileInfo.location}
+              Full Stack Design & Code • {profileInfo.location}
             </p>
           </div>
 

@@ -41,7 +41,7 @@ export const profileInfo: ProfileInfo = {
   name: "Rohit",
   role: "Design Engineer",
   location: "India",
-  bannerUrl: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=1200&auto=format&fit=crop",
+  bannerUrl: "/surreal.gif",
   avatarUrl: "/avatar.jpg",
   bioBullets: [
     {
@@ -243,18 +243,18 @@ export const techStackData: TechItem[] = [
   { name: "Tailwind CSS", category: "Frontend", url: "https://tailwindcss.com" },
   { name: "Framer Motion", category: "Frontend", url: "https://motion.dev" },
   { name: "JavaScript", category: "Frontend", url: "https://developer.mozilla.org/en-US/docs/Web/JavaScript" },
-  
+
   // Backend
   { name: "Node.js", category: "Backend", url: "https://nodejs.org" },
   { name: "GraphQL", category: "Backend", url: "https://graphql.org" },
   { name: "PostgreSQL", category: "Backend", url: "https://www.postgresql.org" },
   { name: "Redis", category: "Backend", url: "https://redis.io" },
-  
+
   // Design
   { name: "Figma", category: "Design", url: "https://www.figma.com" },
   { name: "UI/UX Systems", category: "Design", url: "https://material.io" },
   { name: "Design Tokens", category: "Design", url: "https://w3c.github.io/design-tokens" },
-  
+
   // Tools
   { name: "Git", category: "Tools", url: "https://git-scm.com" },
   { name: "Vite", category: "Tools", url: "https://vitejs.dev" },

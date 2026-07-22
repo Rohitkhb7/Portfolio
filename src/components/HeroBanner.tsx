@@ -58,7 +58,7 @@ export default function HeroBanner() {
         {/* Info Column */}
         <div className="flex flex-row justify-between w-full items-center gap-3 pr-3 sm:pr-0 min-w-0 flex-1">
           <div className="flex flex-col items-start text-left min-w-0 flex-1">
-            
+
             {/* Serif Name */}
             <h1 className="font-serif-custom text-3xl sm:text-5xl text-[var(--text-primary)] leading-none truncate max-w-full">
               {profileInfo.name}
@@ -90,7 +90,7 @@ export default function HeroBanner() {
 
             {/* Location & Tag */}
             <p className="text-[10px] sm:text-xs text-[var(--text-muted)] font-semibold mt-1 truncate max-w-full">
-              Full Stack Design & Code • {profileInfo.location}
+              UI/UX & Frontend Specialist • {profileInfo.location}
             </p>
           </div>
 

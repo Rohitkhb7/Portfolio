@@ -34,6 +34,7 @@ export default function HeroBanner() {
           src={profileInfo.bannerUrl}
           alt="Banner cover"
           fill
+          unoptimized
           priority
           sizes="(max-width: 800px) 100vw, 800px"
           className="object-cover"

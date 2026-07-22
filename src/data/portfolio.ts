@@ -84,7 +84,7 @@ export const socialGrid: SocialItem[] = [
   {
     name: "Resume",
     label: "Resume",
-    url: "https://drive.google.com/file/d/1JfmppwzYOa5vCN2NDizOxJGApbFgN4E8/view",
+    url: "https://drive.google.com/file/d/1dPREFlbZkojb5jZ3X8pex4vNvUrPg_7p/view",
     icon: "paperclip",
   },
 ];

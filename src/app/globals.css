@@ -15,6 +15,7 @@
   --border-dashed: #e5e5e5;
   --card-bg: rgba(0, 0, 0, 0.02);
   --hover-bg: rgba(0, 0, 0, 0.05);
+  --grid-line: rgba(0, 0, 0, 0.06);
 }
 
 .dark {
@@ -26,6 +27,19 @@
   --border-dashed: #272727;
   --card-bg: rgba(255, 255, 255, 0.02);
   --hover-bg: rgba(255, 255, 255, 0.05);
+  --grid-line: rgba(255, 255, 255, 0.04);
+}
+
+.bg-grid-pattern {
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, var(--grid-line) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--grid-line) 1px, transparent 1px);
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 4.5rem;
 }
 
 body {

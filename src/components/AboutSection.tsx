@@ -2,7 +2,7 @@ import { profileInfo } from "@/data/portfolio";
 
 export default function AboutSection() {
   return (
-    <section id="about" className="w-full mt-4 flex flex-col gap-2">
+    <section id="about" className="w-full flex flex-col gap-2 scroll-mt-20">
       {/* Title */}
       <div className="w-full h-10 flex items-center px-3">
         <h2 className="font-serif-custom text-3xl text-[var(--text-primary)]">

@@ -19,7 +19,7 @@ export default function Projects() {
   });
 
   return (
-    <section id="projects" className="w-full mt-6 flex flex-col gap-3">
+    <section id="projects" className="w-full flex flex-col gap-3 scroll-mt-20">
       {/* Title & Filter Tabs Header */}
       <div className="flex flex-col sm:flex-row px-3 sm:items-center w-full justify-between gap-3">
         <h2 className="font-serif-custom text-3xl text-[var(--text-primary)]">
@@ -65,11 +65,11 @@ export default function Projects() {
 
       {/* 2-Column Grid */}
       {filteredProjects.length > 0 ? (
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-1">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-1 items-stretch">
           {filteredProjects.map((project) => (
             <div
               key={project.id}
-              className="w-full h-auto border border-dashed border-[var(--border-dashed)] flex p-3 flex-col justify-between transition-all duration-300 rounded-sm bg-[var(--card-bg)] hover:border-neutral-400 dark:hover:border-neutral-600"
+              className="w-full h-full border border-dashed border-[var(--border-dashed)] flex p-3.5 flex-col justify-between transition-all duration-300 rounded-sm bg-[var(--card-bg)] hover:border-neutral-400 dark:hover:border-neutral-600"
             >
               {/* Top Cover Box */}
               <a

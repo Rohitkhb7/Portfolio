@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import ThemeToggle from "./ThemeToggle";
+import DogToggle from "./DogToggle";
 import { Menu, X } from "lucide-react";
 
 export default function Header() {
@@ -18,7 +19,7 @@ export default function Header() {
 
   return (
     <div className="w-full flex justify-center items-center fixed top-0 left-0 right-0 z-50 bg-[var(--bg-header)] backdrop-blur-md border-b border-dashed border-[var(--border-dashed)]">
-      <div className="h-12 items-center flex px-4 justify-between w-full max-w-[800px] border-x border-dashed border-[var(--border-dashed)] relative">
+      <div className="h-12 items-center flex px-4 sm:px-6 md:px-6 justify-between w-full max-w-[800px] border-x border-dashed border-[var(--border-dashed)] relative">
         {/* Brand Logo */}
         <div>
           <a href="#home">
@@ -29,7 +30,7 @@ export default function Header() {
         </div>
 
         {/* Desktop Nav Items */}
-        <div className="hidden md:flex gap-6 items-center">
+        <div className="hidden md:flex gap-4 items-center">
           <nav className="flex gap-5 items-center text-[var(--text-secondary)] text-sm">
             {navItems.map((item) => {
               const isActive = activeTab === item.name;
@@ -53,11 +54,13 @@ export default function Header() {
             })}
           </nav>
           <div className="h-4 w-[1px] bg-[var(--border-dashed)]" />
+          <DogToggle />
           <ThemeToggle />
         </div>
 
         {/* Mobile controls */}
         <div className="flex md:hidden items-center gap-2">
+          <DogToggle />
           <ThemeToggle />
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}

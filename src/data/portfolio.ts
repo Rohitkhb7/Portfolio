@@ -3,7 +3,9 @@ export interface ProfileInfo {
   role: string;
   location: string;
   bannerUrl: string;
+  bannerOptions: string[];
   avatarUrl: string;
+  avatarOptions: string[];
   bioBullets: Array<{ text: string; highlightWords?: string[] }>;
 }
 
@@ -42,7 +44,9 @@ export const profileInfo: ProfileInfo = {
   role: "Design Engineer",
   location: "India",
   bannerUrl: "/surreal.gif",
+  bannerOptions: ["/surreal.gif", "/pink-silhout.webp"],
   avatarUrl: "/avatar.jpg",
+  avatarOptions: ["/profile-bw.png", "/avatar.jpg"],
   bioBullets: [
     {
       text: "I'm a Design Engineer passionate about crafting digital products where thoughtful design meets clean, scalable code.",

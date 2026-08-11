@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { ExternalLink } from "lucide-react";
 import { techStackData } from "@/data/portfolio";
+import { TechIcon } from "./Icons";
 
 const categories = ["All", "Frontend", "Backend", "Design", "Tools"] as const;
 
@@ -15,7 +16,7 @@ export default function TechStackSection() {
   });
 
   return (
-    <section id="techstack" className="w-full mt-8 px-3 flex flex-col gap-2">
+    <section id="techstack" className="w-full px-3 flex flex-col gap-2 scroll-mt-20">
       {/* Header Row */}
       <div className="w-full flex flex-col sm:flex-row sm:items-center justify-between gap-3 h-auto py-2">
         <div className="flex items-baseline gap-2">
@@ -58,7 +59,10 @@ export default function TechStackSection() {
             rel="noopener noreferrer"
             className="group"
           >
-            <div className="text-[var(--text-secondary)] hover:text-[var(--text-primary)] border border-dashed border-[var(--border-dashed)] px-3 py-1.5 rounded-sm hover:border-[var(--text-secondary)] transition-all flex items-center gap-2 cursor-pointer text-xs font-mono bg-[var(--card-bg)]">
+            <div className="text-[var(--text-secondary)] hover:text-[var(--text-primary)] border border-dashed border-[var(--border-dashed)] px-3 py-1.5 rounded-sm hover:border-[var(--text-secondary)] transition-all duration-200 flex items-center gap-2 cursor-pointer text-xs font-mono bg-[var(--card-bg)] hover:bg-[var(--hover-bg)]">
+              <span className="w-4 h-4 shrink-0 flex items-center justify-center transition-all duration-300 filter grayscale opacity-75 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-110">
+                <TechIcon name={tech.name} className="w-4 h-4" />
+              </span>
               <span>{tech.name}</span>
               <ExternalLink className="w-3 h-3 text-[var(--text-muted)] opacity-0 group-hover:opacity-100 transition-opacity" />
             </div>

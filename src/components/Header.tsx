@@ -14,8 +14,8 @@ export default function Header() {
     { name: "About", href: "#about" },
     { name: "Contact", href: "#contact" },
     { name: "Projects", href: "#projects" },
-    { name: "Activity", href: "#github-activity" },
     { name: "Tech Stack", href: "#techstack" },
+    { name: "Activity", href: "#github-activity" },
   ];
 
   return (

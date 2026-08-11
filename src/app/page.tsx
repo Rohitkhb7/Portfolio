@@ -25,9 +25,9 @@ export default function Home() {
         <div className="w-full border-t border-dashed border-[var(--border-dashed)]" />
         <Projects />
         <div className="w-full border-t border-dashed border-[var(--border-dashed)]" />
-        <GithubCalendarSection />
-        <div className="w-full border-t border-dashed border-[var(--border-dashed)]" />
         <TechStackSection />
+        <div className="w-full border-t border-dashed border-[var(--border-dashed)]" />
+        <GithubCalendarSection />
         <Footer />
       </main>
     </div>

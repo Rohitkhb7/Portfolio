@@ -3,6 +3,7 @@ import HeroBanner from "@/components/HeroBanner";
 import AboutSection from "@/components/AboutSection";
 import ContactGrid from "@/components/ContactGrid";
 import Projects from "@/components/Projects";
+import GithubCalendarSection from "@/components/GithubCalendarSection";
 import TechStackSection from "@/components/TechStackSection";
 import Footer from "@/components/Footer";
 import CursorDog from "@/components/CursorDog";
@@ -23,6 +24,8 @@ export default function Home() {
         <ContactGrid />
         <div className="w-full border-t border-dashed border-[var(--border-dashed)]" />
         <Projects />
+        <div className="w-full border-t border-dashed border-[var(--border-dashed)]" />
+        <GithubCalendarSection />
         <div className="w-full border-t border-dashed border-[var(--border-dashed)]" />
         <TechStackSection />
         <Footer />

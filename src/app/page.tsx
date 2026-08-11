@@ -16,7 +16,7 @@ export default function Home() {
       <Header />
 
       {/* Main Central Blueprint Container */}
-      <main className="w-full max-w-[800px] border-x border-[var(--border-dashed)] border-dashed px-4 sm:px-6 md:px-6 py-2 min-h-screen flex flex-col gap-4 mt-2 z-20 mb-5 mx-auto bg-[var(--bg-primary)]/80 backdrop-blur-[1px]">
+      <main className="w-full max-w-[800px] border-x border-[var(--border-dashed)] border-dashed px-4 sm:px-6 md:px-6 pt-0 pb-2 min-h-screen flex flex-col gap-4 mt-12 z-20 mb-5 mx-auto bg-[var(--bg-primary)]/80 backdrop-blur-[1px]">
         <HeroBanner />
         <div className="w-full border-t border-dashed border-[var(--border-dashed)]" />
         <AboutSection />

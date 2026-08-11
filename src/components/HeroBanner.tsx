@@ -43,7 +43,7 @@ export default function HeroBanner() {
       {/* Top Banner Cover with 2-Banner Toggle */}
       <div
         onClick={toggleBanner}
-        className="w-full h-32 sm:h-52 overflow-hidden relative rounded-xs border border-[var(--border-dashed)] cursor-pointer group select-none mt-3"
+        className="w-full h-32 sm:h-52 overflow-hidden relative rounded-xs border border-[var(--border-dashed)] cursor-pointer group select-none mt-4 sm:mt-6"
         title="Click to toggle banner image"
       >
         <AnimatePresence mode="wait">

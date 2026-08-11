@@ -135,8 +135,10 @@ export const TechIcon = ({ name, className = "w-4 h-4" }: { name: string; classN
 
     case "postgresql":
       return (
-        <svg viewBox="0 0 24 24" fill="#336791" className={className}>
-          <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm1 14.5h-2v-4H9v-2h2V9.5C11 8.1 12.1 7 13.5 7H15v2h-1.5c-.3 0-.5.2-.5.5V10.5h2v2h-2v4z" />
+        <svg viewBox="0 0 24 24" fill="none" className={className}>
+          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2Z" fill="#336791" />
+          <path d="M8.5 8C7.67 8 7 8.67 7 9.5V11C7 11.55 7.45 12 8 12H9V13.5C9 14.33 9.67 15 10.5 15H12V16.5C12 17.05 12.45 17.5 13 17.5H14.5C15.33 17.5 16 16.83 16 16V14.5C16 13.95 15.55 13.5 15 13.5H14V12H15.5C16.33 12 17 11.33 17 10.5V9.5C17 8.67 16.33 8 15.5 8H8.5Z" fill="#FFFFFF" />
+          <circle cx="10" cy="9.8" r="0.8" fill="#336791" />
         </svg>
       );
 

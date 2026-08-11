@@ -39,7 +39,7 @@ export default function HeroBanner() {
   };
 
   return (
-    <section id="home" className="w-full flex flex-col gap-2 pt-14 z-10 scroll-mt-20">
+    <section id="home" className="w-full flex flex-col gap-2 pt-14 sm:pt-16 z-10 scroll-mt-20">
       {/* Top Banner Cover with 2-Banner Toggle */}
       <div
         onClick={toggleBanner}
@@ -183,7 +183,7 @@ export default function HeroBanner() {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -12 }}
                   transition={{ duration: 0.3, ease: "easeInOut" }}
-                  className="flex gap-0.5 text-xs sm:text-lg font-semibold text-[var(--text-secondary)]"
+                  className="flex gap-0.5 text-xs sm:text-lg font-semibold text-[var(--text-primary)]"
                 >
                   {roles[roleIndex].split("").map((char, index) => (
                     <span

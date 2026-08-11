@@ -64,8 +64,8 @@ export default function ContactGrid() {
       </div>
 
       {/* Grid Row */}
-      <div className="w-full grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-2 py-1">
-        {socialGrid.map((item, idx) => {
+      <div className="w-full grid grid-cols-2 sm:grid-cols-5 gap-2 py-0.5">
+        {socialGrid.map((item) => {
           const config = socialBrandConfig[item.icon] || {
             hoverBorder: "hover:border-[var(--text-secondary)]",
             hoverText: "group-hover:text-[var(--text-primary)]",
@@ -78,9 +78,7 @@ export default function ContactGrid() {
               href={item.url}
               target="_blank"
               rel="noopener noreferrer"
-              className={`w-full group ${
-                idx === socialGrid.length - 1 ? "col-span-2 sm:col-span-1" : ""
-              }`}
+              className="w-full group"
             >
               <div
                 className={`w-full h-full flex items-center px-2.5 py-2 gap-2 border border-dashed border-[var(--border-dashed)] cursor-pointer transition-all duration-300 rounded-sm bg-[var(--card-bg)]/40 ${config.hoverBorder}`}

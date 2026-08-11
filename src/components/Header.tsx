@@ -6,13 +6,10 @@ import DogToggle from "./DogToggle";
 import { Menu, X } from "lucide-react";
 
 export default function Header() {
-  const [activeTab, setActiveTab] = useState("Home");
+  const [activeTab, setActiveTab] = useState("Projects");
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const navItems = [
-    { name: "Home", href: "#home" },
-    { name: "About", href: "#about" },
-    { name: "Contact", href: "#contact" },
     { name: "Projects", href: "#projects" },
     { name: "Tech Stack", href: "#techstack" },
     { name: "Activity", href: "#github-activity" },
@@ -40,15 +37,15 @@ export default function Header() {
                   key={item.name}
                   href={item.href}
                   onClick={() => setActiveTab(item.name)}
-                  className={`relative py-1 cursor-pointer transition-colors duration-200 select-none ${
+                  className={`relative cursor-pointer transition-all duration-200 select-none ${
                     isActive
-                      ? "text-[var(--text-primary)] font-medium"
-                      : "text-[var(--text-secondary)] hover:text-[var(--text-primary)]"
+                      ? "text-[var(--text-primary)] font-medium px-2.5 py-0.5 rounded-md border border-[var(--border-dashed)] bg-[var(--card-bg)]/60 flex flex-col items-center justify-center"
+                      : "text-[var(--text-secondary)] hover:text-[var(--text-primary)] px-2 py-0.5"
                   }`}
                 >
                   <span>{item.name}</span>
                   {isActive && (
-                    <span className="absolute bottom-[-2px] left-1/2 -translate-x-1/2 size-1 rounded-full bg-[var(--text-primary)]" />
+                    <span className="absolute bottom-[-1px] left-1/2 -translate-x-1/2 w-1 h-1 rounded-full bg-[var(--text-primary)]" />
                   )}
                 </a>
               );

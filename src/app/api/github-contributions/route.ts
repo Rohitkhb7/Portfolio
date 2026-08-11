@@ -15,44 +15,36 @@ export async function GET() {
 
     if (!res.ok) {
       return NextResponse.json(
-        { error: `GitHub endpoint returned status ${res.status}` },
+        { error: `GitHub endpoint status ${res.status}` },
         { status: res.status }
       );
     }
 
     const html = await res.text();
 
-    const days: Array<{ date: string; level: number }> = [];
-    const cellRegex = /<td[^>]+data-date="([^"]+)"[^>]*data-level="([^"]+)"/g;
-    let match;
+    // Extract table and count from GitHub's live official HTML
+    const tableMatch = html.match(/<table[^>]*ContributionCalendar-grid[^>]*>[\s\S]*?<\/table>/i);
+    const countMatch = html.match(/([\d,]+)\s+contributions\s+in the last year/i);
+    const totalCount = countMatch ? parseInt(countMatch[1].replace(/,/g, ""), 10) : 33;
 
-    while ((match = cellRegex.exec(html)) !== null) {
-      days.push({
-        date: match[1],
-        level: parseInt(match[2], 10) || 0,
-      });
+    if (tableMatch) {
+      let cleanTable = tableMatch[0];
+
+      return NextResponse.json(
+        {
+          tableHtml: cleanTable,
+          totalCount,
+        },
+        {
+          headers: {
+            "Cache-Control": "no-store, no-cache, must-revalidate",
+          },
+        }
+      );
     }
 
-    const totalMatch = html.match(/([\d,]+)\s+contributions\s+in the last year/i);
-    const totalCount = totalMatch
-      ? parseInt(totalMatch[1].replace(/,/g, ""), 10)
-      : days.filter((d) => d.level > 0).length;
-
-    return NextResponse.json(
-      {
-        totalCount,
-        days,
-      },
-      {
-        headers: {
-          "Cache-Control": "no-store, no-cache, must-revalidate, proxy-revalidate",
-        },
-      }
-    );
+    return NextResponse.json({ error: "Could not parse table" }, { status: 500 });
   } catch (err: any) {
-    return NextResponse.json(
-      { error: err.message || "Failed to fetch contributions" },
-      { status: 500 }
-    );
+    return NextResponse.json({ error: err.message }, { status: 500 });
   }
 }

@@ -39,11 +39,11 @@ export default function HeroBanner() {
   };
 
   return (
-    <section id="home" className="w-full flex flex-col gap-2 pt-14 sm:pt-16 z-10 scroll-mt-20">
+    <section id="home" className="w-full flex flex-col gap-2 pt-0 z-10 scroll-mt-14">
       {/* Top Banner Cover with 2-Banner Toggle */}
       <div
         onClick={toggleBanner}
-        className="w-full h-32 sm:h-52 overflow-hidden relative rounded-xs border border-[var(--border-dashed)] cursor-pointer group select-none"
+        className="w-full h-32 sm:h-52 overflow-hidden relative rounded-xs border border-[var(--border-dashed)] cursor-pointer group select-none mt-3"
         title="Click to toggle banner image"
       >
         <AnimatePresence mode="wait">
@@ -79,9 +79,8 @@ export default function HeroBanner() {
         >
           <span className="text-[9px] font-mono text-neutral-300 mr-0.5 hidden sm:inline">Banner</span>
           <span
-            className={`text-[9px] font-mono font-semibold transition-colors ${
-              bannerIndex === 0 ? "text-amber-400" : "text-neutral-400"
-            }`}
+            className={`text-[9px] font-mono font-semibold transition-colors ${bannerIndex === 0 ? "text-amber-400" : "text-neutral-400"
+              }`}
           >
             1
           </span>
@@ -94,9 +93,8 @@ export default function HeroBanner() {
             />
           </div>
           <span
-            className={`text-[9px] font-mono font-semibold transition-colors ${
-              bannerIndex === 1 ? "text-amber-400" : "text-neutral-400"
-            }`}
+            className={`text-[9px] font-mono font-semibold transition-colors ${bannerIndex === 1 ? "text-amber-400" : "text-neutral-400"
+              }`}
           >
             2
           </span>
@@ -104,7 +102,7 @@ export default function HeroBanner() {
       </div>
 
       {/* Profile Row */}
-      <div className="flex flex-row gap-3 sm:gap-7 items-center w-full h-auto sm:h-38 py-3 sm:py-0">
+      <div className="flex flex-row gap-3 sm:gap-7 items-center w-full h-auto sm:h-38 mt-0 py-1 sm:py-0">
         {/* Avatar picture with 2-profile picture toggle */}
         <div
           onClick={toggleAvatar}
@@ -141,9 +139,8 @@ export default function HeroBanner() {
             title="Switch profile picture"
           >
             <span
-              className={`text-[9px] font-mono font-semibold transition-colors ${
-                avatarIndex === 0 ? "text-amber-400" : "text-neutral-400"
-              }`}
+              className={`text-[9px] font-mono font-semibold transition-colors ${avatarIndex === 0 ? "text-amber-400" : "text-neutral-400"
+                }`}
             >
               1
             </span>
@@ -156,9 +153,8 @@ export default function HeroBanner() {
               />
             </div>
             <span
-              className={`text-[9px] font-mono font-semibold transition-colors ${
-                avatarIndex === 1 ? "text-amber-400" : "text-neutral-400"
-              }`}
+              className={`text-[9px] font-mono font-semibold transition-colors ${avatarIndex === 1 ? "text-amber-400" : "text-neutral-400"
+                }`}
             >
               2
             </span>
